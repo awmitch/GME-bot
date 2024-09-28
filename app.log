@@ -1,0 +1,151 @@
+2024-09-28 10:26:45,346 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 10:26:45,348 - INFO - Starting EntryApprovalFeature...
+2024-09-28 10:26:45,412 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:26:45,418 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:26:45,423 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:26:45,444 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:26:45,455 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:26:45,460 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:26:45,460 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:26:45,460 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:26:45,460 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 10:26:45,471 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 10:26:45,481 - INFO - Scheduler started
+2024-09-28 10:26:45,502 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 10:26:45,627 - ERROR - An error occurred: SUBMIT_VALIDATION_FLAIR_REQUIRED: 'Your post must contain post flair.' on field 'flair'
+2024-09-28 10:26:57,278 - INFO - Shutting down bot...
+2024-09-28 10:29:43,193 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 10:29:43,195 - INFO - Starting EntryApprovalFeature...
+2024-09-28 10:29:43,279 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:29:43,285 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:29:43,290 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:29:43,301 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:29:43,301 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:29:43,302 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:29:43,302 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:29:43,302 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:29:43,302 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 10:29:43,308 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 10:29:43,308 - INFO - Scheduler started
+2024-09-28 10:29:43,313 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 10:29:43,778 - INFO - Posted the weekly cheers leaderboard and instructions.
+2024-09-28 10:45:30,120 - INFO - Shutting down bot...
+2024-09-28 10:47:32,161 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 10:47:32,162 - INFO - Starting EntryApprovalFeature...
+2024-09-28 10:47:32,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:47:32,421 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:47:32,421 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:47:45,167 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:47:45,169 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:47:45,172 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:47:45,193 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:47:45,206 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:47:45,221 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 10:47:45,228 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 10:47:45,228 - INFO - Scheduler started
+2024-09-28 10:47:45,284 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 10:51:26,653 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 10:51:26,665 - INFO - Starting EntryApprovalFeature...
+2024-09-28 10:51:26,912 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:51:26,919 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:51:26,925 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:51:26,938 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:51:26,949 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:51:26,957 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:51:26,964 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:51:26,969 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:51:26,970 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 10:51:26,983 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 10:51:26,989 - INFO - Scheduler started
+2024-09-28 10:51:27,028 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 10:52:00,888 - INFO - Updated flair for Gamestop-bot: (:1DFV1:1)
+2024-09-28 10:52:01,318 - INFO - cheers awarded to Gamestop-bot by Actual-Captain6649.
+2024-09-28 10:55:54,633 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 10:55:54,635 - INFO - Starting EntryApprovalFeature...
+2024-09-28 10:55:54,735 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:55:54,735 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:55:54,736 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:55:54,736 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:55:54,746 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 10:55:54,752 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:55:54,762 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:55:54,762 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 10:55:54,768 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 10:55:54,768 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 10:55:54,768 - INFO - Scheduler started
+2024-09-28 10:55:54,780 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 11:06:18,375 - INFO - Updated flair for Gamestop-bot: - :1DFV1:2
+2024-09-28 11:06:18,798 - INFO - cheers awarded to Gamestop-bot by Actual-Captain6649.
+2024-09-28 11:20:56,392 - INFO - liquid_at mentioned a user not part of the subreddit: also
+2024-09-28 11:23:17,696 - INFO - Updated flair for liquid_at: - :1DFV1:2
+2024-09-28 11:23:18,113 - INFO - cheers awarded to liquid_at by Actual-Captain6649.
+2024-09-28 11:32:34,707 - INFO - Shutting down bot...
+2024-09-28 11:32:38,570 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 11:32:38,572 - INFO - Starting EntryApprovalFeature...
+2024-09-28 11:32:38,670 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:32:38,675 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:32:38,681 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:32:38,686 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:32:38,691 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:32:38,697 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:32:38,697 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:32:38,702 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:32:38,708 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 11:32:38,708 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 11:32:38,708 - INFO - Scheduler started
+2024-09-28 11:32:38,724 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 11:34:57,750 - INFO - Updated flair for liquid_at: - :1DFV1:2 - :1DFV1:3
+2024-09-28 11:34:58,161 - INFO - cheers awarded to liquid_at by Actual-Captain6649.
+2024-09-28 11:56:18,687 - INFO - Shutting down bot...
+2024-09-28 11:56:22,964 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 11:56:22,967 - INFO - Starting EntryApprovalFeature...
+2024-09-28 11:56:22,969 - INFO - Starting to monitor comments for quips...
+2024-09-28 11:56:23,114 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:56:23,120 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:56:23,125 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:56:23,125 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:56:23,126 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 11:56:23,126 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:56:23,126 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:56:23,132 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 11:56:23,163 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 11:56:23,168 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 11:56:23,174 - INFO - Scheduler started
+2024-09-28 11:56:23,199 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 11:57:17,469 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 11:57:17,906 - INFO - Replied to comment by Actual-Captain6649
+2024-09-28 12:03:09,935 - INFO - Shutting down bot...
+2024-09-28 12:03:14,056 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 12:03:14,057 - INFO - Starting EntryApprovalFeature...
+2024-09-28 12:03:14,058 - INFO - Starting to monitor comments for quips...
+2024-09-28 12:03:14,114 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:03:14,115 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:03:14,115 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:03:14,120 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:03:14,131 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:03:14,137 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:03:14,147 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:03:14,153 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:03:14,153 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 12:03:14,153 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 12:03:14,153 - INFO - Scheduler started
+2024-09-28 12:03:14,179 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 12:03:50,660 - INFO - User Actual-Captain6649 is on cooldown.
+2024-09-28 12:08:47,305 - INFO - Shutting down bot...
+2024-09-28 12:08:51,077 - INFO - Starting to monitor comments for cheers commands...
+2024-09-28 12:08:51,080 - INFO - Starting EntryApprovalFeature...
+2024-09-28 12:08:51,080 - INFO - Starting to monitor comments for quips...
+2024-09-28 12:08:51,193 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:08:51,194 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:08:51,194 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:08:51,200 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:08:51,205 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-09-28 12:08:51,210 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:08:51,211 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:08:51,216 - INFO - Added job "PriceTrackerFeature.create_or_update_post" to job store "default"
+2024-09-28 12:08:51,227 - INFO - Added job "PriceTrackerFeature.store_weekly_open_price" to job store "default"
+2024-09-28 12:08:51,237 - INFO - Added job "PriceTrackerFeature.post_weekly_update" to job store "default"
+2024-09-28 12:08:51,242 - INFO - Scheduler started
+2024-09-28 12:08:51,265 - INFO - PriceTrackerFeature started and scheduler is running.
+2024-09-28 12:09:46,151 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 12:09:46,628 - INFO - Replied to comment by Actual-Captain6649

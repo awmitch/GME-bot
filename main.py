@@ -3,7 +3,6 @@
 import os
 import threading
 import logging
-from rate_limiter import RateLimiter
 import praw
 import prawcore
 from dotenv import load_dotenv
@@ -11,9 +10,18 @@ from dotenv import load_dotenv
 from features.cheers import CheersFeature
 from features.price_tracker import PriceTrackerFeature
 from features.entry_approval import EntryApprovalFeature
+from features.quips import QuipsFeature
+from utils.rate_limiter import RateLimiter
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("app.log"),  # Log to a file named "app.log"
+        logging.StreamHandler()          # Optional: Still log to the console
+    ]
+)
 
 class RateLimitedRequestor(prawcore.Requestor):
     def __init__(self, *args, **kwargs):
@@ -68,15 +76,18 @@ def main():
     cheers_feature = CheersFeature(reddit, subreddit, signature)
     price_tracker_feature = PriceTrackerFeature(reddit, subreddit, FINNHUB_API_KEY, signature)
     entry_approval_feature = EntryApprovalFeature(reddit, subreddit, signature, OPENAI_API_KEY)
+    quips_feature = QuipsFeature(reddit, subreddit, signature, OPENAI_API_KEY)
 
     # Run features in separate threads
     cheers_thread = threading.Thread(target=cheers_feature.run)
     price_tracker_thread = threading.Thread(target=price_tracker_feature.run)
     entry_approval_thread = threading.Thread(target=entry_approval_feature.run)
+    quips_thread = threading.Thread(target=quips_feature.run)
 
     cheers_thread.start()
     price_tracker_thread.start()
     entry_approval_thread.start()
+    quips_thread.start()
 
     # Keep the main thread alive
     try:
