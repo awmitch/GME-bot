@@ -69,17 +69,17 @@ class CheersFeature:
             flair_text = flair['flair_text'] or ''
             flair_css_class = flair['flair_css_class'] or ''
 
-        # Remove any existing cheers count from the flair
-        flair_text = re.sub(r'\(:1DFV1:\d+\)$', '', flair_text).strip()
+        # Remove any existing cheers count from the flair in the format " - :emoji:#"
+        flair_text = re.sub(r' - :1DFV1:\d+$', '', flair_text).strip()
 
-        # Append the new cheers count using the emoji
-        new_flair_text = f"{flair_text} (:1DFV1:{cheers_count})".strip()
+        # Append the new cheers count using the updated format " - :emoji:#"
+        new_flair_text = f"{flair_text} - :1DFV1:{cheers_count}".strip()
 
         # Ensure the flair text doesn't exceed Reddit's limit (64 characters)
         if len(new_flair_text) > 64:
-            allowed_length = 64 - len(f" (:1DFV1:{cheers_count})")
+            allowed_length = 64 - len(f" - :1DFV1:{cheers_count}")
             flair_text = flair_text[:allowed_length].rstrip()
-            new_flair_text = f"{flair_text} (:1DFV1:{cheers_count})"
+            new_flair_text = f"{flair_text} - :1DFV1:{cheers_count}"
 
         # Update the user's flair
         self.subreddit.flair.set(username, text=new_flair_text, css_class=flair_css_class)
@@ -95,7 +95,11 @@ class CheersFeature:
             last_award_time = datetime.strptime(last_award_time_str, "%Y-%m-%d %H:%M:%S")
 
             if (current_time - last_award_time).total_seconds() < self.CHEERS_COOLDOWN_SECONDS:
-                return False, "You can only award cheers once every 10 minutes."
+                time_remaining = int((self.CHEERS_COOLDOWN_SECONDS - time_since_last_award) // 60) + 1
+                return False, (
+                    f"You can only award cheers once every {int(self.CHEERS_COOLDOWN_SECONDS // 60)} minutes. "
+                    f"Please wait {time_remaining} more minute(s)."
+                )
 
         # Account age check
         account_age_days = (current_time - datetime.utcfromtimestamp(author.created_utc)).days
@@ -205,12 +209,24 @@ class CheersFeature:
         logging.info(f"cheers awarded to {mentioned_username} by {author_name}.")
 
     def process_cheers_command(self, comment, command_text):
-        words = command_text.strip().split()
         awarder = comment.author
         author_name = awarder.name
 
+        # Find the position of '!cheers' in the comment body
+        body = comment.body
+        cheers_match = re.search(r'(?i)!cheers', body)
+        if not cheers_match:
+            # Should not happen, since this method is called when '!cheers' is found
+            return
+
+        cheers_start = cheers_match.start()
+        cheers_end = cheers_match.end()
+
+        # Get the text after '!cheers'
+        after_cheers = body[cheers_end:].strip()
+
         # Check for '!cheers me' or '!cheers top'
-        if len(words) >= 2 and words[1].lower() == 'me':
+        if re.match(r'(?i)^(me)\b', after_cheers):
             # Handle '!cheers me'
             cheers_count = self.cheers_data.get(author_name.lower(), 0)
             content = f"You have {cheers_count} cheers."
@@ -218,7 +234,7 @@ class CheersFeature:
             comment.reply(content)
             logging.info(f"Replied to {author_name} with their cheers count.")
             return
-        elif len(words) >= 2 and words[1].lower() == 'top':
+        elif re.match(r'(?i)^(top)\b', after_cheers):
             # Handle '!cheers top'
             top_users = sorted(self.cheers_data.items(), key=lambda x: x[1], reverse=True)[:5]
             leaderboard = '\n'.join([f"{idx+1}. u/{user} - {count} cheers" for idx, (user, count) in enumerate(top_users)])
@@ -228,32 +244,30 @@ class CheersFeature:
             logging.info(f"Provided leaderboard to {author_name}.")
             return
 
-        # Check if the second word is 'to', skip it
-        idx = 1
-        if len(words) > idx and words[idx].lower() == 'to':
-            idx += 1
-
-        if len(words) > idx:
-            mentioned_username = words[idx]
-            reason = ' '.join(words[idx+1:]).strip()
+        # Check if a 'u/username' follows
+        username_match = re.search(r'(?i)u/[^\s]+', after_cheers)
+        if username_match:
+            # Extract username
+            mentioned_username = username_match.group().lstrip('u/').lstrip('/')
+            # The reason is the rest of the message after the username
+            reason_start = username_match.end()
+            reason = after_cheers[reason_start:].strip()
         else:
             # No username provided, award cheers to parent comment's author
             parent = comment.parent()
             if hasattr(parent, 'author') and parent.author:
                 mentioned_username = parent.author.name
-                reason = ''
+                reason = after_cheers.strip()  # The rest of the message is the reason
             else:
                 content = "Cannot find the user to award cheers to."
                 content += self.signature
                 comment.reply(content)
                 return
 
-        # Remove 'u/' prefix if present
-        mentioned_username = mentioned_username.lstrip('u/').lstrip('/')
-
         # Now handle the cheers
         reason_text = f'\n\n"*{reason}*"' if reason else ""
         self.handle_cheers(mentioned_username, awarder, comment, reason_text)
+
 
     def monitor_comments(self):
         for comment in self.subreddit.stream.comments(skip_existing=True):
@@ -261,8 +275,8 @@ class CheersFeature:
                 if comment.author.name == self.REDDIT_USERNAME:
                     continue
 
-                if re.search(r'\b!cheers\b', comment.body, re.IGNORECASE):
-                    command_match = re.search(r'(?i)(!cheers\b.*)', comment.body)
+                if re.search(r'!cheers', comment.body, re.IGNORECASE):
+                    command_match = re.search(r'(?i)(!cheers.*)', comment.body)
                     if command_match:
                         command_text = command_match.group(1)
                         self.process_cheers_command(comment, command_text)
@@ -295,8 +309,12 @@ class CheersFeature:
         content += instructions
         content += self.signature
 
+        # Get the flair template ID
+        choices = list(self.subreddit.flair.link_templates.user_selectable())
+        template_id = next(x for x in choices if x["flair_text"] == "Discussion")["flair_template_id"]
+            
         # Post the content to the subreddit
-        self.subreddit.submit(title="Weekly Cheers Leaderboard and Instructions", selftext=content)
+        self.subreddit.submit(title="Weekly Cheers Leaderboard and Instructions", selftext=content, flair_id=template_id)
         logging.info("Posted the weekly cheers leaderboard and instructions.")
 
     def run(self):
